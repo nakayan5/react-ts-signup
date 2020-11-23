@@ -19,18 +19,19 @@ const styles = (theme: Theme): StyleRules => createStyles({
     }
 })
 
+
+
 interface PrimaryButtonProps extends WithStyles<typeof styles> {
-  label: string;
+    label: string;
+    onClick: () => void;
 }
 
 
-
-
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({}) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({classes, label, onClick}: PrimaryButtonProps) => {
 
     return (
-        <Button>
-            ボタン
+        <Button className={classes.button} onClick={onClick}>
+            {label}
         </Button>
     )
 }

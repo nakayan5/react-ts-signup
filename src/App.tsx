@@ -2,9 +2,10 @@ import React from 'react';
 import SignUp from './SignUp'
 
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <div style={{margin: '0 auto'}}>
         <SignUp />
     </div>
   );
