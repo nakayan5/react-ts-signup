@@ -5,7 +5,7 @@ import {Theme} from '@material-ui/core/styles/createMuiTheme'
 import withStyles, {WithStyles, StyleRules} from '@material-ui/core/styles/withStyles'
 import createStyles from '@material-ui/core/styles/createStyles'
 
-const styles = (theme: Theme): StyleRules => createStyles({
+const useStyles = (theme: Theme): StyleRules => createStyles({
     button: {
         backgroundColor: '#4dd0e1',
         color: '0001',
@@ -21,7 +21,7 @@ const styles = (theme: Theme): StyleRules => createStyles({
 
 
 
-interface PrimaryButtonProps extends WithStyles<typeof styles> {
+interface PrimaryButtonProps extends WithStyles<typeof useStyles> {
     label: string;
     onClick: () => void;
 }
@@ -36,4 +36,4 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({classes, label, onClick}: 
     )
 }
 
-export default withStyles(styles)(PrimaryButton);
+export default withStyles(useStyles)(PrimaryButton);

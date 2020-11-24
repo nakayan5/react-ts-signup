@@ -1,3 +1,5 @@
+// functional component props がある場合
+
 import React, { useState, useCallback } from 'react'
 import PrimaryButton from './components/PrimaryButton'
 import TextInput from './components/TextInput'
@@ -24,10 +26,18 @@ const SignUp: React.FC = () => {
     }, [setConfirmPassword]);
     
     const handelSubmit = () => {
-        console.log(name);
-        console.log(email);
-        console.log(password);
-        console.log(confirmPassword);
+        if (name === '' || email === '' || password === '' || confirmPassword === '') {
+            alert('未入力です')
+        } else {
+            console.log(name);
+            console.log(email);
+            console.log(password);
+            console.log(confirmPassword);
+            setName('')
+            setEmail('')
+            setPassword('')
+            setConfirmPassword('')
+        }
     }
 
     return (
